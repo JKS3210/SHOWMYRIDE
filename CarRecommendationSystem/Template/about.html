@@ -1,0 +1,165 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static %}
+<html lang="en">
+<head>
+<title>SHOW MY RIDE</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Controller Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="{% static 'temp/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'temp/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'temp/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="{% static 'jtemp/s/jquery-2.1.4.min.js' %}"></script>
+<!-- //js -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'temp/temp/js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'temp/temp/js/easing.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+	<style>
+		select{
+			width:470px;
+			margin:10px;
+		}
+		select:focus{
+			min-width:470px;
+			width:auto
+		}
+	</style>
+<!-- start-smoth-scrolling -->
+</head>
+	
+<body>
+<!-- banner -->
+	<div class="banner two">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html">SH<span>O</span>W<span>MY</span>RI<span>D</span>E</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+							  <ul class="top-links">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					    <ul class="nav navbar-nav">
+          							  <li><a href="{% url 'home' %}">HOME</a></li>
+
+
+								  <li class="active"><a class="active" href="about.html">SEARCH</a></li>
+
+         						 </ul>
+       						 </div>
+        				<!-- /.navbar-collapse -->
+						    
+								<script>
+									$('ul.nav li.dropdown').hover(function() {
+										 $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+											}, function() {
+												$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+											});
+								</script>
+					</nav>					
+				</div>
+				<div class="clearfix"></div>
+			
+			   <div class="w3l-sub-head">
+                       <h2 class="tittle">Search Your Dream Car</h2>
+               </div>			
+		</div>
+	   <!--banner Slider starts Here-->
+						<script src="{% static 'temp/js/responsiveslides.min.js' %}"></script>
+		<!--banner Slider starts Here-->
+<!-- //banner -->	
+
+<!-- about -->
+   <div class="about" id="about">
+        <div class="container">
+			 <div class="wthree-about">
+				 {% block content %}
+				  <div class="col-md-5 wthree-ab-left">
+				      <img src="{% static 'temp/images/ab.jpg' %}" class="responsive" alt=" " />
+                  </div>
+					<div class="col-md-7 wthree-ab-right">
+				     <h2>What Are You Looking For?</h2>
+				     <form method="post" action="{% url 'viewres' %}" name="frm">
+				{% csrf_token %}
+            <center>
+                <input type="text" name="year" placeholder="Year" style="font-size:19px; width:80%; border: 1px solid #ccc; border-radius: 5px;" required></center><br/>
+            <center>
+                <input type="text" name="price" placeholder="Selling Price" style="font-size:19px; width:80%; border: 1px solid #ccc; border-radius: 5px;" required></center><br/>
+            <center>
+                <input type="text" name="km" placeholder="Km driven" style="font-size:19px; width:80%; border: 1px solid #ccc; border-radius: 5px;" required></center>
+            <center>
+				<br/>
+                <select name="fuel" style="max-width:100%;">
+                <option>Fuel Type</option>
+                <option value="0">Diesel</option>
+				<option value="1">Petrol</option>
+				<option value="2">LPG</option>
+                <option value="3">CNG</option>
+            </select>
+            </center>
+<br/>
+            <center>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="Search" style="width:80%;height:5%;background-color:#58ACFA;border-radius:12px;color:white;">
+            </center>
+			</form>
+				  </div>
+				  <div class="clearfix"></div>
+				 {% endblock %}
+			 </div>
+		</div>
+	</div>
+<!--// about -->
+
+  <!-- Footer -->
+	<div class="w3l-footer">
+		<div class="container">
+         <div class="footer-info-agile">
+
+
+
+
+
+			</div>
+
+			<div class="copyright-wthree">
+				<center><p>&copy; 2022 Show My Ride. | All Rights Reserved </p></center>
+			</div>
+
+		</div>
+	</div>
+<!-- for bootstrap working -->
+	<script src="{% static 'temp/js/bootstrap.js' %}"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
